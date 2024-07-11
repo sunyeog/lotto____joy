@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 01:12:34 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/07/12 01:48:48 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/07/12 01:57:06 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,21 @@ int	find_equal(int *a)
 	int	cnt;
 
 	i = 0;
-	j = 0;
-	cnt = 0;
 	while (i<6)
 	{
+		j = 0;
+		cnt = 0;
 		while (j<6)
 		{
 			if(*(a + i) == *(a + j))
 				cnt++;
 			j++;
 		}
+		if (cnt >= 2)
+			return (0);
 		i++;
 	}
-	if (cnt >= 2)
-		return (0);
-	else
-		return (1);
+	return (1);
 }
 
 int main(void)
